@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       - run: yarn install
-      - run: yarn start & ORIGIN=http://localhost:3000 yarn test
+      - name: Run Docker container
+        run: docker compose up server & ORIGIN=http://localhost:8080 yarn test

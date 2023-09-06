@@ -1,0 +1,18 @@
+{
+  "name": "e2e-gha",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:sadnessOjisan/e2e-gha.git",
+  "author": "sadnessOjisan <sadness.ojisan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "workspace:server": "yarn workspace server",
+    "workspace:test": "yarn workspace test",
+    "start": "yarn workspace:server start",
+    "test": "yarn workspace:test test"
+  }
+}

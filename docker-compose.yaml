@@ -5,5 +5,20 @@ services:
     build:
       context: .
       dockerfile: ./packages/server/Dockerfile
+    networks:
+      - networkForTest
     ports:
       - 8080:3000
+  test:
+    build:
+      context: .
+      dockerfile: ./packages/test/Dockerfile
+    depends_on:
+      - server
+    networks:
+      - networkForTest
+    environment:
+      - ORIGIN=http://server:3000
+networks:
+  networkForTest:
+    driver: bridge

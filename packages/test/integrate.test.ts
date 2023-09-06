@@ -1,5 +1,7 @@
 import { expect, test } from "vitest";
 
+console.log(process.env.ORIGIN);
+
 test("echo q=1", async () => {
   const res = await fetch(`${process.env.ORIGIN}?q=1`);
   const data = await res.json();

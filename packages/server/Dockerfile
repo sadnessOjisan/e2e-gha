@@ -1,7 +1,5 @@
 FROM node:18 AS builder
 
-ARG CORS_ORIGIN
-
 WORKDIR /app
 
 COPY . .

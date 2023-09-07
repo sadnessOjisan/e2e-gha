@@ -11,3 +11,9 @@ run on docker
 ```sh
 docker compose up server & ORIGIN=http://0.0.0.0:8080 yarn test
 ```
+
+with docker network
+
+```sh
+docker compose up test
+```
